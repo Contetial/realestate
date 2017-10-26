@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-configuration PUBLIC  
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"  
+          "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">  
+  
+<hibernate-configuration>  
+  
+    <session-factory>   	 
+    	<property name="show_sql">true</property>   		 
+   		<property name="hibernate.cache.use_second_level_cache">false</property>
+        <property name="hibernate.cache.use_query_cache">false</property>
+         
+         <!-- JDBC connection pool (use the built-in) -->
+        <!-- property name="connection.pool_size">12</property-->
+
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <!-- property name="dialect">org.hibernate.dialect.MySQL5Dialect</property-->    	
+
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">thread</property>
+        
+      <mapping class="com.contetial.realEstate.persistance.entity.AppUser"/>   
+      <mapping class="com.contetial.realEstate.persistance.entity.Customer"/> 
+      <mapping class="com.contetial.realEstate.persistance.entity.Property"/>
+      <mapping class="com.contetial.realEstate.persistance.entity.Deal"/>
+      <mapping class="com.contetial.realEstate.persistance.entity.DealLogBook"/>
+      <mapping class="com.contetial.realEstate.persistance.entity.DealSchedule"/>
+      <mapping class="com.contetial.realEstate.persistance.entity.Gallery"/>
+      <mapping class="com.contetial.realEstate.persistance.entity.ImageDetails"/> 
+      <mapping class="com.contetial.realEstate.persistance.entity.VideoDetails"/>           
+    </session-factory>  
+  
+</hibernate-configuration> 

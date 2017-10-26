@@ -1,0 +1,223 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body{ 
+  margin:0;
+  padding:0;
+  background:url(bg-new.jpg);
+  background-repeat:repeat-x;
+  width:100%;
+}
+
+#main {
+width:974px;
+margin:1px auto 0px auto;
+}
+
+#header {
+width:1000px;
+height:100px;
+border-bottom:1px #000 thick;
+z-index:10;
+position:fixed;
+margin-bottom:-135px;
+background:#FFF;
+opacity:0.8;
+top:0;
+
+}
+
+#banner {
+width:100%;
+height:518px;
+background:url(top-bg.jpg);
+background-repeat:repeat;
+margin:-17px auto 0px auto;
+border-bottom:2px solid #333333;
+}
+#grid-container{
+  background:#f8f8f8 url(../images/grid-container-bg.gif) repeat-x top left;
+  width:100%;
+}
+#grid{
+  width:1140px;
+  margin:0px auto;
+}
+
+td
+{
+	font-family: calibri, arial;
+	font-size:13px;
+	line-height:1.5em;
+	text-decoration:none;
+	text-align:justify;
+	color:#000;
+}
+
+img
+{
+	border:0px;
+}
+
+
+.heading
+{
+	font-family: calibri, arial;
+	font-size:20px;
+	color:#2f2f2f;
+	text-decoration:none;
+}
+
+.style-1
+{
+	font-family:calibri, arial;
+	font-size:22px;
+	font-weight:bold;
+	color:#ee2000;
+	text-decoration:none;
+	text-transform:capitalize;
+}
+
+	
+
+#footer {
+height:61px; position: absolute; z-index: 10000; /*bottom: 0px;*/ background: none repeat scroll 0% 0% rgb(0, 0, 0); width: 100%; float: right; color:#fff; right: 0px;
+opacity:0.4px;
+}
+
+.img
+{
+	float:right;
+	padding-left:20px;
+	padding-bottom:20px;
+}
+
+.footer-link
+{
+font-family:calibri, arial;
+	font-size:13px;
+	color:#fff;
+	text-decoration:none;
+	line-height:1.5em;
+	}
+.footer-link:hover
+{
+	color:#FC0;
+}
+
+.footer_txt
+{
+	font-family:calibri, arial;
+	font-size:13px;
+	color:#fff;
+	text-decoration:none;
+	line-height:1.5em;
+/*	text-transform:uppercase;*/
+}
+
+.footer_nav
+{
+	font-family:calibri, arial;
+	font-size:14px;
+	color:#fff;
+	text-decoration:none;
+	text-transform:uppercase;
+	line-height:1.5em;
+}
+.footer_nav:hover
+{
+	color:#FC0;
+}
+
+#menu
+{
+	background:#000 repeat;
+	
+}
+
+.menu
+{
+	font-family: calibri, arial;
+	font-size:15px;
+	color:#fff;
+	text-decoration:none;
+	line-height:1.5em;
+	text-transform:uppercase;
+}
+.menu-link
+{
+	font-family: calibri, arial;
+	font-size:15px;
+	color:#FC0;
+	text-decoration:none;
+	line-height:1.5em;
+	text-transform:uppercase;
+}
+
+.menu-link:hover
+{
+color:#fff
+}
+
+
+/*slider */
+
+/* Clear floated elements */
+.clear {
+	clear:both;
+}
+#menu_bg {
+width:974px;
+height:39px;
+margin:0px auto 0px auto;
+position:absolute;
+margin-top:-35px;
+margin-left:200px;
+
+}
+
+#menu1 {
+width:600px;
+float:right;
+margin-right:20px;
+
+}
+#menu{
+    float:left;
+	position:relative;
+    z-index:9999;
+    height:71px;
+    padding-top:35px;
+    text-align: right;
+    width: 400px;
+}
+
+
+#main2 {
+width:974px;
+margin:1px auto 0px auto;
+}
+
+.headd {
+font-family:Arial, Helvetica, sans-serif;
+font-size:18px;
+color:#FF0000;
+padding:10px 0px 0px 0px;
+}
+
+.text {
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:12px;
+color:#000000;
+line-height:22px;
+text-align:justify;
+}
+
+td.heading1{
+  font-size:15px;
+}
+
+#myForm td{
+height:31px;
+}
+

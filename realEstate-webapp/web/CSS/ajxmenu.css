@@ -1,0 +1,13 @@
+/*
+ Ajatix Advanced CSS Drop Down Menu
+ Copyright (C) 2010 Ajatix. All rights reserved.
+ http://www.ajatix.com
+ Unregistered copy.
+ Any usage except for the purpose of evaluation is strictly prohibited.
+*/
+.AJXCSSMenuAINdGaD {position:relative;z-index:100;width:205px;}
+.AJXCSSMenuAINdGaD ul {position:relative;float:left;margin:0;padding:0;list-style-type:none;background:#96ba7e;}
+.AJXCSSMenuAINdGaD li {float:left;width:205px;margin:0;}
+.AJXCSSMenuAINdGaD a {display:block;width:177px;overflow:hidden;padding:19px 8px 19px 20px;font:bold 12px/12px Verdana,Arial,Helvetica,sans-serif;text-decoration:none;text-align:left;color:#ffffff;background:#509629;}
+.AJXCSSMenuAINdGaD li:hover a,.AJXCSSMenuAINdGaD .ajxover a {background:#316415;}
+.AJXCSSMenuAINdGaD br {clear:both;height:0;font-size: 1px;line-height: 0px;}

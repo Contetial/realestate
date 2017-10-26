@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/security
+                           http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+
+    <security:global-method-security secured-annotations="enabled" />
+    
+    <bean id="userDao" 
+    	class="com.contetial.realEstate.services.AppUserService">
+	</bean>
+	
+	<bean id="passwordEncoder" 
+		class="org.springframework.security.crypto.password.StandardPasswordEncoder">
+		<constructor-arg value="Twerk" />
+	</bean>
+	
+	 <bean id="encoder" 
+		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+		<constructor-arg name="strength" value="11" />
+	  </bean>
+	
+	<bean id="UnauthorizedEntryPoint" 
+		class="com.contetial.realEstate.controller.authorization.UnauthorizedEntryPoint" />
+
+	<bean id="authenticationTokenProcessingFilter"
+		class="com.contetial.realEstate.controller.authorization.AuthenticationTokenProcessingFilter" >
+		<constructor-arg ref="userDao" />
+	</bean>
+    
+    <security:authentication-manager id="authenticationManager">
+		<security:authentication-provider user-service-ref="userDao">
+			<security:password-encoder ref="encoder" hash="bcrypt"></security:password-encoder>
+		</security:authentication-provider>
+	</security:authentication-manager>
+
+	<security:http
+			realm="Protected API"
+			use-expressions="true"
+			auto-config="false"
+			create-session="stateless"
+			entry-point-ref="UnauthorizedEntryPoint"
+			authentication-manager-ref="authenticationManager">
+		<security:custom-filter ref="authenticationTokenProcessingFilter" position="FORM_LOGIN_FILTER" />
+		<security:intercept-url pattern="/CSS/**" access="permitAll" />
+    	<security:intercept-url pattern="/images/**" access="permitAll" />
+    	<security:intercept-url pattern="/JavaScripts/**" access="permitAll" />
+		<security:intercept-url pattern="/home" access="permitAll" />
+		<security:intercept-url pattern="/properties" access="permitAll" />
+		<security:intercept-url pattern="/aboutus" access="permitAll" />
+		<security:intercept-url pattern="/login" access="permitAll" />
+		<security:intercept-url method="GET" pattern="/pages/templates/*.jsp" access="permitAll" />
+		<security:intercept-url method="GET" pattern="/pages/misc/*.jsp" access="permitAll" />
+		<security:intercept-url method="GET" pattern="/pages/info/*.jsp" access="permitAll" />
+		<security:intercept-url method="GET" pattern="/pages/admin/*.jsp" access="permitAll" />
+		
+		<security:intercept-url method="GET" pattern="/rest/propertyService/**" access="permitAll" />
+		<security:intercept-url method="GET" pattern="/rest/galleryService/**" access="permitAll" />
+		<security:intercept-url method="GET" pattern="/rest/imageService/**" access="permitAll" />
+		<security:intercept-url method="GET" pattern="/rest/videoService/**" access="permitAll" />
+		<security:intercept-url method="GET" pattern="/rest/commService/**" access="permitAll" />
+		
+		<security:intercept-url pattern="/rest/userService/authenticate" access="permitAll" />
+		<security:intercept-url pattern="/rest/userService/getUser" access="permitAll" />
+				
+		<security:intercept-url pattern="/rest/customerService/**" access="hasAnyRole('admin','agent','manager')" />
+		<security:intercept-url pattern="/rest/propertyService/**" access="hasAnyRole('admin','agent','manager')" />
+		<security:intercept-url pattern="/rest/userService/**" access="hasAnyRole('admin','agent','manager')"/>
+		<security:intercept-url pattern="/rest/logBookService/**" access="hasAnyRole('admin','agent','manager')"/>
+		
+		<security:intercept-url pattern="/rest/galleryService/**" access="hasAnyRole('admin','agent','manager')" />
+		<security:intercept-url pattern="/rest/imageService/**" access="hasAnyRole('admin','agent','manager')" />
+		<security:intercept-url pattern="/rest/videoService/**" access="hasAnyRole('admin','agent','manager')" />				
+	</security:http>  
+</beans>

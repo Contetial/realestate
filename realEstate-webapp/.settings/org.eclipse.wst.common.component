@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="realEstate-webapp">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/web" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/java"/>
+        <dependent-module archiveName="realEstate-utils-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/realEstate-utils/realEstate-utils">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="realEstate-persistance-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/realEstate-persistance/realEstate-persistance">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="realEstate-services-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/realEstate-services/realEstate-services">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="java-output-path" value="/realEstate-webapp/build/classes"/>
+        <property name="context-root" value="realEstate-webapp"/>
+    </wb-module>
+</project-modules>
